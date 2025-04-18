@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('invitation_id')->constrained()->onDelete('cascade');
+            $table->string('url');
+            $table->string('caption')->nullable();
+            $table->string('type'); // example: gallery, cover
             $table->timestamps();
         });
     }

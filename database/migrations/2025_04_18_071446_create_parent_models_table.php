@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('parent_models', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('invitation_id')->constrained()->onDelete('cascade');
+            $table->string('name');
+            $table->string('host_role');
+            $table->string('relation');
+            $table->string('image_url');
             $table->timestamps();
         });
     }

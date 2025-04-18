@@ -13,6 +13,19 @@ return new class extends Migration
     {
         Schema::create('invitations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('theme_id')->constrained()->onDelete('cascade');
+            $table->string('slug')->unique();
+            $table->string('event_title');
+            $table->string('host_one_name');
+            $table->string('host_two_name');
+            $table->string('host_one_nickname');
+            $table->string('host_two_nickname');
+            $table->timestamp('event_date');
+            $table->string('event_type');
+            $table->string('location');
+            $table->text('message')->nullable();
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

@@ -7,6 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Guest extends Model
 {
-    /** @use HasFactory<\Database\Factories\GuestFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'id',
+        'invitation_id',
+        'name',
+        'phone_number',
+        'slug',
+        'is_attending',
+        'total_guest',
+        'message'
+    ];
+
+    public function invitation()
+    {
+        return $this->belongsTo(Invitation::class);
+    }
 }

@@ -17,7 +17,10 @@ class ImageFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'invitation_id' => \App\Models\Invitation::factory(),
+            'url' => $this->faker->imageUrl(),
+            'caption' => $this->faker->sentence(),
+            'type' => $this->faker->randomElement(['gallery', 'cover']),
         ];
     }
 }

@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('rundowns', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('invitation_id')->constrained()->onDelete('cascade');
+            $table->string('title');
+            $table->time('start_time');
+            $table->time('end_time');
+            $table->text('description')->nullable();
+            $table->string('image_url')->nullable();
+            $table->integer('order_number')->default(0);
             $table->timestamps();
         });
     }

@@ -7,6 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rsvp extends Model
 {
-    /** @use HasFactory<\Database\Factories\RsvpFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'invitation_id',
+        'name',
+        'message',
+        'attendance_status',
+        'total_guest'
+    ];
+
+    public function invitation()
+    {
+        return $this->belongsTo(Invitation::class);
+    }
 }

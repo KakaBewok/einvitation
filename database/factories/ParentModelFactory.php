@@ -17,7 +17,11 @@ class ParentModelFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'invitation_id' => \App\Models\Invitation::factory(),
+            'name' => $this->faker->name(),
+            'host_role' => $this->faker->randomElement(['host one', 'host two']),
+            'relation' => $this->faker->randomElement(['father', 'mother']),
+            'image_url' => $this->faker->imageUrl(),
         ];
     }
 }

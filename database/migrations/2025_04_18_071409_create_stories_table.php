@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('stories', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('invitation_id')->constrained()->onDelete('cascade');
+            $table->string('title');
+            $table->string('content');
+            $table->string('image_url')->nullable();
+            $table->timestamp('story_date');
+            $table->integer('order_number')->default(0);
             $table->timestamps();
         });
     }

@@ -17,7 +17,13 @@ class GuestFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'invitation_id' => \App\Models\Invitation::factory(),
+            'name' => $this->faker->name(),
+            'phone_number' => $this->faker->phoneNumber(),
+            'slug' => $this->faker->unique()->slug(),
+            'is_attending' => $this->faker->boolean(),
+            'total_guest' => $this->faker->numberBetween(1, 5),
+            'message' => $this->faker->sentence(),
         ];
     }
 }

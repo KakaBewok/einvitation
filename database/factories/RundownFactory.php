@@ -16,8 +16,16 @@ class RundownFactory extends Factory
      */
     public function definition(): array
     {
+        $start = $this->faker->time('H:i:s');
+        $end = date('H:i:s', strtotime($start . ' +1 hour'));
+
         return [
-            //
+            'invitation_id' => \App\Models\Invitation::factory(),
+            'title' => $this->faker->sentence(2),
+            'start_time' => $start,
+            'end_time' => $end,
+            'description' => $this->faker->paragraph(),
+            'order_number' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

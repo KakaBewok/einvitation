@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('guests', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('invitation_id')->constrained()->onDelete('cascade');
+            $table->string('name');
+            $table->string('phone_number');
+            $table->string('slug')->unique();
+            $table->boolean('is_attending')->default(true);
+            $table->integer('total_guest')->default(1);
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }

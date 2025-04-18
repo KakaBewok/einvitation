@@ -17,7 +17,11 @@ class RsvpFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'invitation_id' => \App\Models\Invitation::factory(),
+            'name' => $this->faker->name(),
+            'message' => $this->faker->sentence(),
+            'attendance_status' => $this->faker->boolean(),
+            'total_guest' => (string) $this->faker->numberBetween(1, 5),
         ];
     }
 }

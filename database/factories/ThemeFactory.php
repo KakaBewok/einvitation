@@ -17,7 +17,10 @@ class ThemeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->randomElement(['Engangement', 'Wedding', 'Birthday', 'Graduation']),
+            'preview_image' => $this->faker->imageUrl(),
+            'is_active' => $this->faker->boolean(80),
+            'description' => $this->faker->sentence(),
         ];
     }
 }
