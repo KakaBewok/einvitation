@@ -13,6 +13,8 @@ use App\Models\Image;
 use App\Models\Story;
 use App\Models\Rundown;
 use App\Models\Guest;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,37 +23,59 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Create roles
+        $free = Role::create(['name' => 'free']);
+        $basic = Role::create(['name' => 'basic']);
+        $pro = Role::create(['name' => 'pro']);
+
+        // create permissions 
+        Permission::create(['name' => 'create invitation']);
+        Permission::create(['name' => 'view analytics']);
+        Permission::create(['name' => 'use premium themes']);
+
+        // Assign permissions to roles
+        $free->givePermissionTo('create invitation');
+        $basic->givePermissionTo(['create invitation', 'view analytics']);
+        $pro->givePermissionTo(['create invitation', 'view analytics', 'use premium themes']);
+
         // Manual user
-        User::create([
+        $superAdmin = User::create([
             'name' => 'Super Admin',
             'email' => 'super.admin@gmail.com',
             'password' => Hash::make('superadmin123'),
             'package' => 'pro',
         ]);
-        User::create([
+        $admin = User::create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('cincayocoyuli'),
             'package' => 'pro',
         ]);
-        User::create([
+        $zaynMalik = User::create([
             'name' => 'Zayn Malik',
             'email' => 'zayn.malik@gmail.com',
             'password' => Hash::make('zaynmalik123'),
             'package' => 'free',
         ]);
-        User::create([
+        $harryStyles = User::create([
             'name' => 'Harry Styles',
             'email' => 'harry.styles@gmail.com',
             'password' => Hash::make('harrystyles123'),
             'package' => 'basic',
         ]);
-        User::create([
+        $coyuli = User::create([
             'name' => 'Coyuli',
             'email' => 'coyuli@gmail.com',
             'password' => Hash::make('coyuli123'),
             'package' => 'pro',
         ]);
+
+        // Assign roles
+        $zaynMalik->assignRole('free');
+        $harryStyles->assignRole('basic');
+        $coyuli->assignRole('pro');
+        $admin->assignRole('pro');
+        $superAdmin->assignRole('pro');
 
         // Factory models
         Theme::factory(3)->create();
