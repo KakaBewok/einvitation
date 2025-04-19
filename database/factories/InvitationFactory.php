@@ -33,6 +33,7 @@ class InvitationFactory extends Factory
             'event_type' => $this->faker->randomElement(['wedding', 'engagement']),
             'location' => $this->faker->address(),
             'message' => $this->faker->paragraph(),
+            'is_active' => $this->faker->boolean(80),
         ];
     }
 }

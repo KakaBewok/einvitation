@@ -10,12 +10,12 @@ import AppLogo from './app-logo';
 const mainNavItems: NavItem[] = [
     {
         title: 'Dashboard',
-        href: '/dashboard',
+        href: '/admin/dashboard',
         icon: LayoutGrid,
     },
     {
         title: 'My Invitations',
-        href: '/invitations',
+        href: '/admin/invitations',
         icon: BookHeart,
     },
     {

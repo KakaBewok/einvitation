@@ -29,14 +29,14 @@ class DatabaseSeeder extends Seeder
         $pro = Role::create(['name' => 'pro']);
 
         // create permissions 
-        Permission::create(['name' => 'create invitation']);
+        Permission::create(['name' => 'manage invitations']);
         Permission::create(['name' => 'view analytics']);
         Permission::create(['name' => 'use premium themes']);
 
         // Assign permissions to roles
-        $free->givePermissionTo('create invitation');
-        $basic->givePermissionTo(['create invitation', 'view analytics']);
-        $pro->givePermissionTo(['create invitation', 'view analytics', 'use premium themes']);
+        $free->givePermissionTo(['manage invitations']);
+        $basic->givePermissionTo(['view analytics', 'manage invitations']);
+        $pro->givePermissionTo(['view analytics', 'use premium themes', 'manage invitations']);
 
         // Manual user
         $superAdmin = User::create([
