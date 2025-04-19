@@ -73,7 +73,7 @@ export const InvitationClient: React.FC<InvitationClientProps> = ({ data, userNa
                 onClose={() => setModalOpen(false)}
                 onConfirm={handleDeleteIds}
                 loading={loading}
-                description="Are you sure? This action can't be undone."
+                description="This action can't be undone."
             />
             <DataTable onDelete={openDeleteModal} searchKey="grooms_name" columns={columns} data={data} />
         </>

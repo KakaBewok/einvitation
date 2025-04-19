@@ -18,4 +18,20 @@ class InvitationService
             ->where('user_id', $user_id)->orderBy('event_date', 'asc')
             ->get();
     }
+
+    public function delete(int $id)
+    {
+        try {
+            $data = Invitation::find($id);
+            if ($data) {
+                return $data->delete();
+            }
+            return false;
+        } catch (\Exception $e) {
+            Log::error('Failed to delete data invitation', [
+                'id' => $id,
+                'error_message' => $e->getMessage(),
+            ]);
+        }
+    }
 }

@@ -14,7 +14,7 @@ export const CellAction = ({ data }: { data: InvitationColumn }) => {
         e?.stopPropagation();
 
         setLoading(true);
-        router.delete(route('admin.invitation.destroy', data.id), {
+        router.delete(route('admin.invitations.destroy', data.id), {
             onSuccess: () => {
                 // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                 toast.success('Data deleted.', {
@@ -60,6 +60,8 @@ export const CellAction = ({ data }: { data: InvitationColumn }) => {
 
     const handleActivationInvitation = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
+
+        alert('Activation invitation');
         // setLoading(true);
         // router.get(
         //     route('admin.invitation.show', data.id),
@@ -80,9 +82,33 @@ export const CellAction = ({ data }: { data: InvitationColumn }) => {
                 }}
                 onConfirm={(e) => handleDeleteId(e)}
                 loading={loading}
-                description="Deleting this product will also remove it from any orders."
+                description="This action can't be undone."
             />
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-end gap-2">
+                {!data.is_active && (
+                    <Button
+                        disabled={loading}
+                        variant="ghost"
+                        className="bg-green-500 p-0 text-white hover:bg-green-600 hover:text-white dark:bg-green-500 dark:hover:bg-green-600"
+                        onClick={(e) => handleActivationInvitation(e)}
+                    >
+                        Activation
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        >
+                            <path d="M12 2v10" />
+                            <path d="M18.4 6.6a9 9 0 1 1-12.77.04" />
+                        </svg>
+                    </Button>
+                )}
                 <Button
                     disabled={loading}
                     variant="destructive"
@@ -136,29 +162,6 @@ export const CellAction = ({ data }: { data: InvitationColumn }) => {
                             fill="#F9F9FC"
                             d="M21.92,11.6C19.9,6.91,16.1,4,12,4S4.1,6.91,2.08,11.6a1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20s7.9-2.91,9.92-7.6A1,1,0,0,0,21.92,11.6ZM12,18c-3.17,0-6.17-2.29-7.9-6C5.83,8.29,8.83,6,12,6s6.17,2.29,7.9,6C18.17,15.71,15.17,18,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,14Z"
                         ></path>
-                    </svg>
-                </Button>
-                <Button
-                    disabled={loading}
-                    variant="ghost"
-                    className="bg-green-500 p-0 text-white hover:bg-green-600 hover:text-white dark:bg-green-500 dark:hover:bg-green-600"
-                    onClick={(e) => handleActivationInvitation(e)}
-                >
-                    Activation
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="21"
-                        height="21"
-                        viewBox="0 0 24 24"
-                        fill="#F9F9FC"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        className="fill-current"
-                    >
-                        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
-                        <path d="m9 12 2 2 4-4" />
                     </svg>
                 </Button>
             </div>

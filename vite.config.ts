@@ -22,4 +22,14 @@ export default defineConfig({
             'ziggy-js': resolve(__dirname, 'vendor/tightenco/ziggy'),
         },
     },
+    // server: {
+    //     https: {
+    //         key: fs.readFileSync('./certs/localhost-key.pem'),
+    //         cert: fs.readFileSync('./certs/localhost.pem'),
+    //     },
+    //     host: true,
+    //     port: 5173,
+    //     strictPort: true,
+    //     cors: true,
+    // },
 });

@@ -72,6 +72,6 @@ class InvitationController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->invitationService->delete($id);
     }
 }
