@@ -1,6 +1,6 @@
 import { AlertModal } from '@/components/alert-modal';
-import Heading from '@/components/heading';
 import { Button } from '@/components/ui/button';
+import { Heading } from '@/components/ui/custom-heading';
 import { DataTable } from '@/components/ui/data-table';
 import { useGlobalContext } from '@/hooks/use-global-context';
 import { InvitationColumn } from '@/types/invitation-columns';
@@ -12,11 +12,12 @@ import { columns } from './columns';
 
 interface InvitationClientProps {
     data: InvitationColumn[];
+    userName: string;
 }
 
-export const InvitationClient: React.FC<InvitationClientProps> = ({ data }) => {
+export const InvitationClient: React.FC<InvitationClientProps> = ({ data, userName }) => {
     const { loading, setLoading } = useGlobalContext();
-    const [ids, setIds] = useState<string[]>(['']);
+    const [ids, setIds] = useState<number[]>([]);
     const [modalOpen, setModalOpen] = useState<boolean>(false);
 
     const handleDeleteIds = () => {
@@ -40,7 +41,7 @@ export const InvitationClient: React.FC<InvitationClientProps> = ({ data }) => {
         );
     };
 
-    const openDeleteModal = (ids: string[]) => {
+    const openDeleteModal = (ids: number[]) => {
         setIds(ids);
         setModalOpen(true);
     };
@@ -59,7 +60,10 @@ export const InvitationClient: React.FC<InvitationClientProps> = ({ data }) => {
     return (
         <>
             <div className="flex items-center justify-between">
-                <Heading title={`Invitations (${data.length})`} description="Manage your invitations" />
+                <Heading
+                    title={`Hello ${userName}!`}
+                    description={`${data.length < 1 ? "Let's make your invitation" : `You have ${data.length} invitation(s)`}`}
+                />
                 <Button onClick={handleCreateProduct} variant="outline" className="dark:bg-slate-200">
                     <Plus className="h-4 w-4 dark:text-slate-900" />
                 </Button>
@@ -71,7 +75,7 @@ export const InvitationClient: React.FC<InvitationClientProps> = ({ data }) => {
                 loading={loading}
                 description="Deleting these products will also remove them from any orders."
             />
-            <DataTable onDelete={openDeleteModal} searchKey="name" columns={columns} data={data} />
+            <DataTable onDelete={openDeleteModal} searchKey="grooms_name" columns={columns} data={data} />
         </>
     );
 };

@@ -38,14 +38,14 @@ import {
 } from "./select";
 
 interface DataWithId {
-    id: string;
+    id: number;
 }
 
 interface DataTableProps<TData extends DataWithId, TValue> {
     columns: ColumnDef<TData, TValue>[];
     data: TData[];
     searchKey: string;
-    onDelete: (ids: string[]) => void;
+    onDelete: (ids: number[]) => void;
 }
 
 export function DataTable<TData extends DataWithId, TValue>({
@@ -100,7 +100,7 @@ export function DataTable<TData extends DataWithId, TValue>({
             {/* search & visibility column*/}
             <div className="flex items-center gap-2 py-4">
                 <Input
-                    placeholder="Search"
+                    placeholder="Search by Groom"
                     value={
                         (table
                             .getColumn(searchKey)

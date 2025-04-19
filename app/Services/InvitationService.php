@@ -15,7 +15,7 @@ class InvitationService
         Log::info('Fetching all invitations for user: ' . $user_id);
 
         return Invitation::with('theme')
-            ->where('user_id', $user_id)
+            ->where('user_id', $user_id)->orderBy('event_date', 'asc')
             ->get();
     }
 }

@@ -1,5 +1,5 @@
 export type InvitationColumn = {
-    id: string;
+    id: number;
     grooms_name: string;
     brides_name: string;
     event_date: string;

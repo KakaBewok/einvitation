@@ -1,10 +1,10 @@
 import { AlertModal } from '@/components/alert-modal';
 import { Button } from '@/components/ui/button';
 import { useGlobalContext } from '@/hooks/use-global-context';
+import { InvitationColumn } from '@/types/invitation-columns';
 import { router } from '@inertiajs/react';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-import { InvitationColumn } from './columns';
 
 export const CellAction = ({ data }: { data: InvitationColumn }) => {
     const { loading, setLoading } = useGlobalContext();
