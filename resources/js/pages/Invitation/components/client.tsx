@@ -35,7 +35,7 @@ export const InvitationClient: React.FC<InvitationClientProps> = ({ data, userNa
                             });
                         }, 1000);
                 },
-                onError: (error) => console.log('An error occurred: ', error),
+                onError: (error) => console.log('An error occurred while destroying bulk the invitations: ', error),
                 onFinish: () => setLoading(false),
             },
         );
@@ -62,7 +62,7 @@ export const InvitationClient: React.FC<InvitationClientProps> = ({ data, userNa
             <div className="flex items-center justify-between">
                 <Heading
                     title={`Hello ${userName}!`}
-                    description={`${data.length < 1 ? "Let's make your invitation" : `You have ${data.length} invitation(s)`}`}
+                    description={`${data == null || data.length < 1 ? "Let's make your invitation!" : `You have ${data.length} invitation(s)`}`}
                 />
                 <Button onClick={handleCreateProduct} variant="outline" className="dark:bg-slate-200">
                     <Plus className="h-4 w-4 dark:text-slate-900" />
@@ -73,7 +73,7 @@ export const InvitationClient: React.FC<InvitationClientProps> = ({ data, userNa
                 onClose={() => setModalOpen(false)}
                 onConfirm={handleDeleteIds}
                 loading={loading}
-                description="Deleting these products will also remove them from any orders."
+                description="Are you sure? This action can't be undone."
             />
             <DataTable onDelete={openDeleteModal} searchKey="grooms_name" columns={columns} data={data} />
         </>

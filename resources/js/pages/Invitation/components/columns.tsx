@@ -117,7 +117,7 @@ export const columns: ColumnDef<InvitationColumn>[] = [
                 <Button
                     variant="outline"
                     className={`flex h-8 w-8 items-center justify-center rounded-full p-0 ${
-                        isActive ? 'bg-green-600 text-white' : 'bg-red-600 text-white'
+                        isActive ? 'bg-green-600 text-white dark:bg-green-700' : 'bg-red-600 text-white dark:bg-red-700'
                     }`}
                     disabled
                 >

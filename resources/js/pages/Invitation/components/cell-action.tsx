@@ -14,7 +14,7 @@ export const CellAction = ({ data }: { data: InvitationColumn }) => {
         e?.stopPropagation();
 
         setLoading(true);
-        router.delete(route('admin.product.destroy', data.id), {
+        router.delete(route('admin.invitation.destroy', data.id), {
             onSuccess: () => {
                 // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                 toast.success('Data deleted.', {
@@ -22,17 +22,17 @@ export const CellAction = ({ data }: { data: InvitationColumn }) => {
                 }),
                     setModalOpen(false);
             },
-            onError: (error) => console.log('An error occurred: ', error),
+            onError: (error) => console.log('An error occurred while destroying the invitation: ', error),
             onFinish: () => setLoading(false),
         });
     };
 
-    const handleEditProduct = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleEditInvitation = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
 
         setLoading(true);
         router.get(
-            route('admin.product.edit', data.id),
+            route('admin.invitation.edit', data.id),
             {},
             {
                 onFinish: () => setLoading(false),
@@ -40,12 +40,12 @@ export const CellAction = ({ data }: { data: InvitationColumn }) => {
         );
     };
 
-    const handleShowDetailsProduct = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleShowDetailsInvitation = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
 
         setLoading(true);
         router.get(
-            route('admin.product.show', data.id),
+            route('admin.invitation.show', data.id),
             {},
             {
                 onFinish: () => setLoading(false),
@@ -56,6 +56,18 @@ export const CellAction = ({ data }: { data: InvitationColumn }) => {
     const handleModalDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         setModalOpen(true);
+    };
+
+    const handleActivationInvitation = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        // setLoading(true);
+        // router.get(
+        //     route('admin.invitation.show', data.id),
+        //     {},
+        //     {
+        //         onFinish: () => setLoading(false),
+        //     },
+        // );
     };
 
     return (
@@ -75,7 +87,7 @@ export const CellAction = ({ data }: { data: InvitationColumn }) => {
                     disabled={loading}
                     variant="destructive"
                     onClick={(e) => handleModalDelete(e)}
-                    className="h-8 w-9 bg-red-500 p-0 hover:bg-red-600"
+                    className="h-8 w-9 bg-red-500 p-0 hover:bg-red-600 dark:bg-red-500 dark:hover:bg-red-600"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -95,8 +107,8 @@ export const CellAction = ({ data }: { data: InvitationColumn }) => {
                 <Button
                     disabled={loading}
                     variant="ghost"
-                    className="h-8 w-9 bg-amber-400 p-0 hover:bg-amber-500"
-                    onClick={(e) => handleEditProduct(e)}
+                    className="h-8 w-9 bg-amber-400 p-0 hover:bg-amber-500 dark:bg-amber-400 dark:hover:bg-amber-500"
+                    onClick={(e) => handleEditInvitation(e)}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -116,14 +128,37 @@ export const CellAction = ({ data }: { data: InvitationColumn }) => {
                 <Button
                     disabled={loading}
                     variant="ghost"
-                    className="h-8 w-9 bg-sky-500 p-0 hover:bg-sky-600"
-                    onClick={(e) => handleShowDetailsProduct(e)}
+                    className="h-8 w-9 bg-sky-500 p-0 hover:bg-sky-600 dark:bg-sky-500 dark:hover:bg-sky-600"
+                    onClick={(e) => handleShowDetailsInvitation(e)}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="eye" className="fill-current" width="21" height="21" fill="none">
                         <path
                             fill="#F9F9FC"
                             d="M21.92,11.6C19.9,6.91,16.1,4,12,4S4.1,6.91,2.08,11.6a1,1,0,0,0,0,.8C4.1,17.09,7.9,20,12,20s7.9-2.91,9.92-7.6A1,1,0,0,0,21.92,11.6ZM12,18c-3.17,0-6.17-2.29-7.9-6C5.83,8.29,8.83,6,12,6s6.17,2.29,7.9,6C18.17,15.71,15.17,18,12,18ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,14Z"
                         ></path>
+                    </svg>
+                </Button>
+                <Button
+                    disabled={loading}
+                    variant="ghost"
+                    className="bg-green-500 p-0 text-white hover:bg-green-600 hover:text-white dark:bg-green-500 dark:hover:bg-green-600"
+                    onClick={(e) => handleActivationInvitation(e)}
+                >
+                    Activation
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="21"
+                        height="21"
+                        viewBox="0 0 24 24"
+                        fill="#F9F9FC"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        className="fill-current"
+                    >
+                        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+                        <path d="m9 12 2 2 4-4" />
                     </svg>
                 </Button>
             </div>

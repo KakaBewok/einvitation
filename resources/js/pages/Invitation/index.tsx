@@ -21,7 +21,7 @@ const ProductPage = ({ invitations }: { invitations: Invitation[] }) => {
         grooms_name: item.host_one_name,
         brides_name: item.host_two_name,
         event_date: item.event_date,
-        theme: item.theme_id?.toString() ?? '-', // aman jika null
+        theme: item.theme_id?.toString() ?? '-',
         is_active: item.is_active ?? false,
         expired_at: item.expired_at ?? '',
     }));
@@ -29,12 +29,9 @@ const ProductPage = ({ invitations }: { invitations: Invitation[] }) => {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Dashboard | Invitations" />
-            <div className="space-y-7 p-2 pt-6">
+            <div className="space-y-10 px-3 pt-8 md:px-7">
                 <InvitationClient data={formattedInvitations} userName={auth.user.name} />
             </div>
-            {/* <h1>
-                Hallo {auth.user.name}! you have {invitations.length} invitations.
-            </h1> */}
         </AppLayout>
     );
 };
