@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Invitation extends Model
 {
@@ -32,6 +33,21 @@ class Invitation extends Model
         'is_active',
         'activated_at',
         'expired_at'
+    ];
+
+    protected static function booted()
+    {
+        static::saving(function ($invitation) {
+            if ($invitation->host_nickname_one && $invitation->host_nickname_two) {
+                $invitation->slug = Str::slug($invitation->host_nickname_one . '-' . $invitation->host_nickname_two);
+            }
+        });
+    }
+
+    protected $casts = [
+        'event_date' => 'datetime',
+        'activated_at' => 'datetime',
+        'expired_at' => 'datetime',
     ];
 
     public function user()
