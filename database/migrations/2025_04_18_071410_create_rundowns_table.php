@@ -15,8 +15,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('invitation_id')->constrained()->onDelete('cascade');
             $table->string('title');
+            $table->string('location');
+            $table->string('location_url')->nullable();
+            $table->timestamp('date');
             $table->time('start_time');
             $table->time('end_time');
+            $table->string('time_zone')->default('WIB');
             $table->text('description')->nullable();
             $table->string('image_url')->nullable();
             $table->integer('order_number')->default(0);

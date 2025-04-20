@@ -23,7 +23,8 @@ class GuestFactory extends Factory
             'slug' => $this->faker->unique()->slug(),
             'is_attending' => $this->faker->boolean(),
             'total_guest' => $this->faker->numberBetween(1, 5),
-            'message' => $this->faker->sentence(),
+            'notes' => $this->faker->sentence(),
+            'address' => $this->faker->address(),
         ];
     }
 }

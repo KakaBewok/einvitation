@@ -10,6 +10,10 @@ class Rundown extends Model
     use HasFactory;
 
     protected $fillable = [
+        'location',
+        'location_url',
+        'date',
+        'time_zone',
         'invitation_id',
         'title',
         'start_time',
@@ -17,6 +21,10 @@ class Rundown extends Model
         'image_url',
         'description',
         'order_number'
+    ];
+
+    protected $casts = [
+        'date' => 'datetime'
     ];
 
     public function invitation()

@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rsvps', function (Blueprint $table) {
+        Schema::create('gift_infos', function (Blueprint $table) {
             $table->id();
+
             $table->foreignId('invitation_id')->constrained()->onDelete('cascade');
-            $table->string('guest_name');
-            $table->text('message')->nullable();
-            $table->boolean('attendance_status')->default(false);
-            $table->integer('total_guest');
+            $table->string('provider_name');
+            $table->string('account_number');
+            $table->string('account_holder');
+            $table->text('gift_delivery_address')->nullable();
+
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rsvps');
+        Schema::dropIfExists('gift_infos');
     }
 };

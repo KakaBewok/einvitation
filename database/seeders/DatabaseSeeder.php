@@ -2,19 +2,21 @@
 
 namespace Database\Seeders;
 
+use App\Models\GiftInfo;
+use App\Models\Guest;
+use App\Models\Image;
+use App\Models\Invitation;
+use App\Models\Music;
+use App\Models\ParentModel;
+use App\Models\Rsvp;
+use App\Models\Rundown;
+use App\Models\Story;
+use App\Models\Theme;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use App\Models\Theme;
-use App\Models\Invitation;
-use App\Models\ParentModel;
-use App\Models\Rsvp;
-use App\Models\Image;
-use App\Models\Story;
-use App\Models\Rundown;
-use App\Models\Guest;
-use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -79,9 +81,11 @@ class DatabaseSeeder extends Seeder
 
         // Factory models
         Theme::factory(3)->create();
+        Music::factory(4)->create();
         Invitation::factory(6)->recycle([
             User::all(),
             Theme::all(),
+            Music::all(),
         ])->create();
 
         Guest::factory(60)->recycle([
@@ -99,7 +103,7 @@ class DatabaseSeeder extends Seeder
         Rsvp::factory(30)->recycle([
             Invitation::all(),
         ])->create();
-        ParentModel::factory(24)->recycle([
+        GiftInfo::factory(12)->recycle([
             Invitation::all(),
         ])->create();
     }

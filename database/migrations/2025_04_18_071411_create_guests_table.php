@@ -15,11 +15,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('invitation_id')->constrained()->onDelete('cascade');
             $table->string('name');
-            $table->string('phone_number');
-            $table->string('slug')->unique();
+            $table->string('phone_number')->nullable();;
+            $table->string('slug');
             $table->boolean('is_attending')->default(true);
             $table->integer('total_guest')->default(1);
-            $table->text('message')->nullable();
+            $table->text('notes')->nullable();
+            $table->text('address')->nullable();
             $table->timestamps();
         });
     }

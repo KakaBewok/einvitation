@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('parent_models', function (Blueprint $table) {
+        Schema::create('music', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('invitation_id')->constrained()->onDelete('cascade');
-            $table->string('name');
-            $table->string('host_role');
-            $table->string('relation');
-            $table->string('image_url');
+            $table->string('title');
+            $table->string('artist')->nullable();;
+            $table->string('url');
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('parent_models');
+        Schema::dropIfExists('music');
     }
 };

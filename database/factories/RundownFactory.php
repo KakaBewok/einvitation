@@ -20,6 +20,10 @@ class RundownFactory extends Factory
         $end = date('H:i:s', strtotime($start . ' +1 hour'));
 
         return [
+            'location' => $this->faker->sentence(2),
+            'location_url' => $this->faker->url(),
+            'date' => $this->faker->dateTimeBetween('now', '+1 week'),
+            'time_zone' => 'WIB',
             'invitation_id' => \App\Models\Invitation::factory(),
             'title' => $this->faker->sentence(2),
             'start_time' => $start,

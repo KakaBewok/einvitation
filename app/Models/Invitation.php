@@ -11,6 +11,13 @@ class Invitation extends Model
     use HasFactory;
 
     protected $fillable = [
+        'phone_number',
+        'music_id',
+        'greetings',
+        'host_one_additional_info',
+        'host_two_additional_info',
+        'host_one_social_media',
+        'host_two_social_media',
         'user_id',
         'theme_id',
         'slug',
@@ -19,13 +26,6 @@ class Invitation extends Model
         'host_two_name',
         'host_one_nickname',
         'host_two_nickname',
-        'bank_name_one',
-        'account_number_one',
-        'account_holder_one',
-        'bank_name_two',
-        'account_number_two',
-        'account_holder_two',
-        'gift_delivery_address',
         'event_date',
         'event_type',
         'location',
@@ -50,6 +50,16 @@ class Invitation extends Model
         'expired_at' => 'datetime',
     ];
 
+    public function giftInfo()
+    {
+        return $this->hasMany(GiftInfo::class);
+    }
+
+    public function music()
+    {
+        return $this->belongsTo(Music::class);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -58,11 +68,6 @@ class Invitation extends Model
     public function theme()
     {
         return $this->belongsTo(Theme::class);
-    }
-
-    public function parents()
-    {
-        return $this->hasMany(ParentModel::class);
     }
 
     public function rsvps()

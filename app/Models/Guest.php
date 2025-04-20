@@ -17,7 +17,8 @@ class Guest extends Model
         'slug',
         'is_attending',
         'total_guest',
-        'message'
+        'notes',
+        'address',
     ];
 
     public function invitation()
