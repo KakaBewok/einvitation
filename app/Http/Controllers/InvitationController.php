@@ -21,7 +21,7 @@ class InvitationController extends Controller
      */
     public function index()
     {
-        $invitations = $this->invitationService->getAllInvitations();
+        $invitations = $this->invitationService->getPrivateInvitations();
         return Inertia::render('Invitation/index', [
             'invitations' => $invitations,
         ]);

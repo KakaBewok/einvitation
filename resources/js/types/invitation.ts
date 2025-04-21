@@ -1,6 +1,6 @@
 import { Guest } from './guest';
 import { Image } from './image';
-import { ParentModel } from './parent-model';
+import { Music } from './music';
 import { Rsvp } from './rsvp';
 import { Rundown } from './rundown';
 import { Story } from './story';
@@ -14,19 +14,17 @@ export interface Invitation {
     host_two_name: string;
     host_one_nickname: string;
     host_two_nickname: string;
-    // gift
-    bank_name_one?: string;
-    account_number_one?: string;
-    account_holder_one?: string;
-    bank_name_two?: string;
-    account_number_two?: string;
-    account_holder_two?: string;
-    gift_delivery_address?: string;
+    host_one_additional_info: string;
+    host_two_additional_info: string;
+    host_one_social_media: string;
+    host_two_social_media: string;
+    phone_number?: string;
     // event
     event_title: string;
     event_date: string; // Format: 'YYYY-MM-DD' or ISO string
     event_type: string;
     location: string;
+    greetings?: string;
     message?: string;
     // etc.
     slug: string;
@@ -36,7 +34,7 @@ export interface Invitation {
     // relationships
     user?: User;
     theme?: Theme;
-    parents?: ParentModel[];
+    music?: Music;
     images?: Image[];
     rsvps?: Rsvp[];
     guests?: Guest[];

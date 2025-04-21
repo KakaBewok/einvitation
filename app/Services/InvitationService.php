@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class InvitationService
 {
-    public function getAllInvitations()
+    public function getPrivateInvitations()
     {
         $user_id = Auth::user()->id;
 

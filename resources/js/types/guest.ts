@@ -5,5 +5,6 @@ export interface Guest {
     slug: string;
     is_attending: boolean;
     total_guest: number;
-    message?: string;
+    notes?: string;
+    address?: string;
 }
