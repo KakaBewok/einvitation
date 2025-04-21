@@ -55,6 +55,11 @@ class Invitation extends Model
         return $this->hasMany(GiftInfo::class);
     }
 
+    public function videos()
+    {
+        return $this->hasMany(Video::class);
+    }
+
     public function music()
     {
         return $this->belongsTo(Music::class);

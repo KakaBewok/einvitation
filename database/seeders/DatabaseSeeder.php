@@ -13,6 +13,7 @@ use App\Models\Rundown;
 use App\Models\Story;
 use App\Models\Theme;
 use App\Models\User;
+use App\Models\Video;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
@@ -104,6 +105,9 @@ class DatabaseSeeder extends Seeder
             Invitation::all(),
         ])->create();
         GiftInfo::factory(12)->recycle([
+            Invitation::all(),
+        ])->create();
+        Video::factory(12)->recycle([
             Invitation::all(),
         ])->create();
     }
