@@ -77,4 +77,15 @@ class InvitationController extends Controller
     {
         $this->invitationService->delete($id);
     }
+
+    /**
+     * Test route for public invitation
+     * @param string $slug
+     */
+    public function public_show(string $slug)
+    {
+        return Inertia::render('Invitation/public-view', [
+            'slug' => $slug,
+        ]);
+    }
 }

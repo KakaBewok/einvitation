@@ -21,5 +21,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 });
 
+// Test route for public invitation
+Route::get('/invitations/{slug}', [InvitationController::class, 'public_show'])->name('invitations.public.show');
+
 require __DIR__ . '/settings.php';
 require __DIR__ . '/auth.php';
