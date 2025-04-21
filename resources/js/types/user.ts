@@ -2,6 +2,6 @@ export interface User {
     id: number;
     name: string;
     email: string;
-    roles: string[] | null;
+    package: string[] | null;
     permissions: string[] | null;
 }

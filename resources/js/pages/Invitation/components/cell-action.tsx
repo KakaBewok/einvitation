@@ -32,7 +32,7 @@ export const CellAction = ({ data }: { data: InvitationColumn }) => {
 
         setLoading(true);
         router.get(
-            route('admin.invitation.edit', data.id),
+            route('admin.invitations.edit', data.id),
             {},
             {
                 onFinish: () => setLoading(false),

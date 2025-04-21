@@ -57,7 +57,6 @@ class InvitationController extends Controller
     public function edit(string $id)
     {
         $invitation = $this->invitationService->getInvitationById($id);
-
         return Inertia::render('Invitation/edit', [
             'invitation' => $invitation,
         ]);

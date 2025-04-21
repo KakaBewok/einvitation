@@ -3,7 +3,7 @@ export interface Rundown {
     title: string;
     location: string;
     locatioan_url: string;
-    date: string;
+    date: Date;
     time_zone: string;
     start_time: string; // Format: 'YYYY-MM-DD HH:mm:ss' or ISO string
     end_time: string; // Format: 'YYYY-MM-DD HH:mm:ss' or ISO string

@@ -23,7 +23,7 @@ class InvitationService
     public function getInvitationById(int $id)
     {
         try {
-            return Invitation::with('theme', 'parents', 'images', 'stories', 'rundwons')->find($id);
+            return Invitation::with('theme', 'images', 'videos', 'giftInfo', 'music', 'stories', 'rundowns', 'guests')->find($id);
         } catch (\Exception $e) {
             Log::error('Failed to fetch invitation by ID', [
                 'id' => $id,

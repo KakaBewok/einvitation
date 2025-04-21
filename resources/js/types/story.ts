@@ -4,6 +4,6 @@ export interface Story {
     content: string;
     image_url: string;
     total_guest: number;
-    story_date: string; // Format: 'YYYY-MM-DD' or ISO string
+    story_date: Date;
     order_number: number;
 }
