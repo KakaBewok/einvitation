@@ -134,29 +134,29 @@ export const formSchema = z.object({
     rundowns: z.any().optional(),
 });
 
-const formSchema = z.object({
-    name: z.string().min(3, { message: 'Name must contain at least 3 character(s)' }),
-    price: z.coerce.number().min(0, { message: 'Price must be greater than or equal to 0' }),
-    category_id: z.string().min(1, { message: 'Category is required' }),
-    description: z.string().optional(),
-    unit: z.string().min(1, { message: 'Unit is required' }),
-    stock_quantity: z.coerce.number().min(0, { message: 'Stock must be greater than or equal to 0' }),
-    photos: z
-        .array(
-            z.union([
-                z
-                    .instanceof(File)
-                    .refine((file) => ACCEPTED_IMAGE_TYPES.includes(file.type), {
-                        message: ' must be jpg, jpeg, png or webp formats',
-                    })
-                    .refine((file) => file.size <= MAX_FILE_SIZE * 1024, {
-                        message: ` is more than ${MAX_FILE_SIZE}KB`,
-                    }),
-                z.string(),
-            ]),
-        )
-        .optional(),
-});
+// const formSchema = z.object({
+//     name: z.string().min(3, { message: 'Name must contain at least 3 character(s)' }),
+//     price: z.coerce.number().min(0, { message: 'Price must be greater than or equal to 0' }),
+//     category_id: z.string().min(1, { message: 'Category is required' }),
+//     description: z.string().optional(),
+//     unit: z.string().min(1, { message: 'Unit is required' }),
+//     stock_quantity: z.coerce.number().min(0, { message: 'Stock must be greater than or equal to 0' }),
+//     photos: z
+//         .array(
+//             z.union([
+//                 z
+//                     .instanceof(File)
+//                     .refine((file) => ACCEPTED_IMAGE_TYPES.includes(file.type), {
+//                         message: ' must be jpg, jpeg, png or webp formats',
+//                     })
+//                     .refine((file) => file.size <= MAX_FILE_SIZE * 1024, {
+//                         message: ` is more than ${MAX_FILE_SIZE}KB`,
+//                     }),
+//                 z.string(),
+//             ]),
+//         )
+//         .optional(),
+// });
 
 type InvitationFormValues = z.infer<typeof formSchema>;
 
