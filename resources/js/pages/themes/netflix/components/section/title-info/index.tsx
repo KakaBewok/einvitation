@@ -16,10 +16,10 @@ export default function TitleInfo() {
                 <span className="mr-2 text-white">{data.tanggal_pernikahan.split('-')[0]}</span>
                 <span className="mr-2 text-white">1h 26m</span>
                 <span>
-                    <img src="/images/4k-icon.png" width={16} height={16} alt="4k" />
+                    <img src="/storage/images/4k-icon.png" width={16} height={16} alt="4k" />
                 </span>
                 <span>
-                    <img src="/images/hd-icon.png" width={16} height={16} alt="hd" />
+                    <img src="/storage/images/hd-icon.png" width={16} height={16} alt="hd" />
                 </span>
             </div>
             <div className="w-fit rounded bg-[#E50913] px-2 py-1 text-xs font-bold text-white">

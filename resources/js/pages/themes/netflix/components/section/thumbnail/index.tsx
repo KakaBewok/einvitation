@@ -46,7 +46,7 @@ export default function Thumbnail() {
         >
             <div className="bg-gradient-to-b from-transparent via-black to-black pt-2 pb-10">
                 <div className="mb-10 space-y-2 px-5">
-                    <img src="/images/NIKAHFIX.webp" alt="NIKAHFIX" width={56} height={15} />
+                    <img src="/storage/images/NIKAHFIX.webp" alt="NIKAHFIX" width={56} height={15} />
                     <div>
                         <h1 className="text-3xl leading-none font-bold">
                             {data.pegantin.wanita.panggilan} & {data.pegantin.pria.panggilan}: <br />

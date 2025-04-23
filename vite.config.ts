@@ -22,6 +22,10 @@ export default defineConfig({
             'ziggy-js': resolve(__dirname, 'vendor/tightenco/ziggy'),
         },
     },
+    server: {
+        host: '127.0.0.1',
+        port: 5173,
+    },
     // server: {
     //     https: {
     //         key: fs.readFileSync('./certs/localhost-key.pem'),
