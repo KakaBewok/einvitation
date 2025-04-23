@@ -1,6 +1,7 @@
+import { BASE_URL } from '@/constants';
+import supabase from '@/pages/themes/netflix/data/supabaseClient';
 import badwords from 'indonesian-badwords';
 import { forwardRef, useEffect, useRef, useState } from 'react';
-import supabase from '../../../data/supabaseClient';
 
 interface WishItemProps {
     name: string;
@@ -14,7 +15,7 @@ const WishItem = forwardRef<HTMLDivElement, WishItemProps>(({ name, message, col
             <img
                 width={24}
                 height={24}
-                src="images/face.png"
+                src={`${BASE_URL}/storage/images/face.png`}
                 style={{
                     backgroundColor: color,
                     minWidth: 24,
@@ -49,13 +50,13 @@ export default function WishSection() {
             return;
         }
 
-        if (message.length < 10) {
-            setError('Pesan minimal 10 karakter!');
+        if (message.length < 5) {
+            setError('Pesan minimal 5 karakter!');
             return;
         }
 
         if (badwords.flag(name)) {
-            setError('Gabolah kata kasar!');
+            setError('Maaf banget 😢 gaboleh ngirim kata kasar ya!');
             return;
         }
 
@@ -106,8 +107,9 @@ export default function WishSection() {
 
     return (
         <div>
-            <h2 className="mb-5 text-lg leading-5 font-bold text-white">Wish for the couple</h2>
-            <div className="wish-container max-h-[20rem] space-y-4 overflow-auto">
+            <h2 className="mb-5 text-lg leading-5 font-bold text-white">Best Wishes for the Couple ❤️</h2>
+            {/* comments list */}
+            <div className="wish-container max-h-[25rem] space-y-4 overflow-auto border border-slate-800 bg-slate-900 p-3">
                 {data.map((item, index) => (
                     <WishItem
                         name={item.name}
@@ -118,32 +120,33 @@ export default function WishSection() {
                     />
                 ))}
             </div>
-            <form onSubmit={handleSubmit} className="mt-4 space-y-4">
-                {error && <div className="text-sm text-red-500">{error}</div>}
+            {/* form input */}
+            <form onSubmit={handleSubmit} className="mt-9 space-y-4">
+                {error && <div className="rounded-sm bg-red-500 px-2 py-1 text-sm font-normal text-slate-50">{error}</div>}
 
                 <div className="space-y-1">
-                    <label>Name</label>
+                    <label className="text-sm">Nama kamu</label>
                     <input
                         required
                         minLength={3}
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="w-full px-2 py-1 text-black focus:outline-none"
+                        className="mt-1 w-full rounded-sm bg-slate-100 px-2 py-1 text-black focus:outline-none"
                     />
                 </div>
                 <div className="space-y-1">
-                    <label>Message</label>
+                    <label className="text-sm">Pesan buat kita ✌️</label>
                     <textarea
                         required
                         minLength={10}
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
-                        className="w-full px-2 py-1 text-black focus:outline-none"
+                        className="mt-1 w-full rounded-sm bg-slate-100 px-2 py-1 text-black focus:outline-none"
                         rows={4}
                     ></textarea>
                 </div>
-                <button type="submit" disabled={loading} className="w-full rounded-sm bg-white py-2 text-black">
-                    Send
+                <button type="submit" disabled={loading} className="w-full rounded-sm bg-white py-2 text-sm font-semibold text-black">
+                    Kirim
                 </button>
             </form>
         </div>

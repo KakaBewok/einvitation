@@ -1,10 +1,11 @@
-import data from '../../../data/config.json';
+import { BASE_URL } from '@/constants';
+import data from '@/pages/themes/netflix/data/config.json';
 
 export default function TitleInfo() {
     return (
-        <div className="space-y-1">
-            <div className="flex items-center gap-2">
-                <img src="/favicon.ico" alt="logo" width={18} height={18} />
+        <div className="mb-14 space-y-2">
+            <div className="flex items-center gap-1">
+                <img src={`${BASE_URL}/storage/images/favicon.ico`} alt="Netflix Logo (N)" width={18} height={18} />
                 <span className="mt-0.5 text-xs tracking-widest text-[#A3A1A1]">DOCUMENTER</span>
             </div>
             <h2 className="text-lg leading-5 font-bold text-white">
@@ -16,10 +17,10 @@ export default function TitleInfo() {
                 <span className="mr-2 text-white">{data.tanggal_pernikahan.split('-')[0]}</span>
                 <span className="mr-2 text-white">1h 26m</span>
                 <span>
-                    <img src="/storage/images/4k-icon.png" width={16} height={16} alt="4k" />
+                    <img src={`${BASE_URL}/storage/images/4k-icon.png`} width={16} height={16} alt="4k" />
                 </span>
                 <span>
-                    <img src="/storage/images/hd-icon.png" width={16} height={16} alt="hd" />
+                    <img src={`${BASE_URL}/storage/images/hd.png`} width={16} height={16} alt="hd" />
                 </span>
             </div>
             <div className="w-fit rounded bg-[#E50913] px-2 py-1 text-xs font-bold text-white">
@@ -27,7 +28,7 @@ export default function TitleInfo() {
             </div>
             <div className="pt-2">
                 <p className="mb-2 text-sm leading-[1.15rem] text-white">{data.intro}</p>
-                <p className="text-[10px] leading-[1rem] text-[#A3A1A1]">
+                <p className="text-[11px] leading-[1rem] text-[#A3A1A1]">
                     "Segala sesuatu Kami ciptakan berpasang-pasangan agar kamu mengingat (kebesaran Allah)" (Q.S Az-Zariyah: 49)
                 </p>
             </div>

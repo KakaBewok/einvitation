@@ -1,17 +1,17 @@
 import { BASE_URL } from '@/constants';
+import data from '@/pages/themes/netflix/data/config.json';
 import React, { useEffect } from 'react';
-import data from '../../../data/config.json';
 import DetailInfo from '../detail-info';
 
 const TagItem = ({ title }: { title: string }) => {
-    return <li className="rounded-xl bg-[#4D4D4D] px-2 py-1 text-xs text-white">{title}</li>;
+    return <li className="rounded-sm bg-[#4D4D4D] px-2 py-1 text-xs text-white">{title}</li>;
 };
 
 export default function Thumbnail() {
-    const [isOpenDetail, setIsOpenDetail] = React.useState(false);
+    const [isOpenDetail, setIsOpenDetail] = React.useState<boolean>(false);
 
     useEffect(() => {
-        const scrollThreshold = 1; // minimum scroll distance in pixels
+        const scrollThreshold = 10; // minimum scroll distance in pixels
 
         const handleScroll = () => {
             if (window.scrollY > scrollThreshold) {
@@ -45,7 +45,7 @@ export default function Thumbnail() {
             }}
             className="mb-10 flex min-h-screen flex-col justify-end bg-cover bg-center bg-no-repeat"
         >
-            <div className="bg-gradient-to-b from-transparent via-black to-black pt-2 pb-10">
+            <div className="bg-gradient-to-b from-transparent via-black to-black pt-2 pb-8">
                 <div className="mb-10 space-y-2 px-5">
                     <img src={`${BASE_URL}/storage/images/NIKAHFIX.webp`} alt="NIKAHFIX" width={56} height={15} />
                     <div>
