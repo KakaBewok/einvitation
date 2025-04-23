@@ -1,3 +1,4 @@
+import { BASE_URL } from '@/constants';
 import React, { useEffect } from 'react';
 import data from '../../../data/config.json';
 import DetailInfo from '../detail-info';
@@ -46,7 +47,7 @@ export default function Thumbnail() {
         >
             <div className="bg-gradient-to-b from-transparent via-black to-black pt-2 pb-10">
                 <div className="mb-10 space-y-2 px-5">
-                    <img src="/storage/images/NIKAHFIX.webp" alt="NIKAHFIX" width={56} height={15} />
+                    <img src={`${BASE_URL}/storage/images/NIKAHFIX.webp`} alt="NIKAHFIX" width={56} height={15} />
                     <div>
                         <h1 className="text-3xl leading-none font-bold">
                             {data.pegantin.wanita.panggilan} & {data.pegantin.pria.panggilan}: <br />
