@@ -1,0 +1,55 @@
+{
+  "pegantin": {
+    "pria": {
+      "foto": "https://slametandfatma.wedding/galeri/slamett.jpeg",
+      "panggilan": "Rizal",
+      "nama": "Noprizal",
+      "bapak": "Bapa gw",
+      "ibu": "Ibu gw"
+    },
+    "wanita": {
+      "foto": "https://slametandfatma.wedding/galeri/fatmaa.jpeg",
+      "panggilan": "Faya",
+      "nama": "Fairuz Ummi F.",
+      "bapak": "Ibu paya",
+      "ibu": "Bapa paya"
+    }
+  },
+  "audio_url": "https://slametandfatma.wedding/audio/myaudio.mp3",
+  "tanggal_pernikahan": "20 April 2025",
+  "thumbnail_image_url": "https://slametandfatma.wedding/galeri/nikahfix.jpg",
+  "url_video": "https://slametandfatma.wedding/video/myvideo.mp4",
+  "intro": "Setelah Paya dan Ijal dipertemukan dalam situasi yang tepat, di mana keduanya telah siap untuk memulai hubungan bersama, tibalah mereka di awal perjalanan baru menuju pernikahan.",
+  "breaking_news_img": "https://slametandfatma.wedding/galeri/news.jpg",
+  "breaking_news_content": "<p>Halo! Karena kalian adalah orang penting yang mengisi hari-hari kami, kami ingin informasikan bahwa kami akan segera menikah! &lt;3 </p><p className=\"mt-4\"> Tapi sebelumnya, kami mohon maaf kepada teman dan kerabat semua karena tidak bisa mengundang kalian hadir di hari bahagia kami, dikarenakan pernikahan kami bersifat intimate wedding yang dilaksanakan di Bekasi dan hanya dihadiri oleh keluarga dan orang terdekat.</p><p className=\"mt-4\">Walaupun begitu, kami harapkan sebaik-baiknya doa untuk kelancaran pernikahan dan hari-hari bahagia setelahnya.</p><p className=\"mt-4\">Dengan penuh cinta,</p><p>The bride and groom &lt;3</p>",
+  "love_story": [
+    {
+      "image_url": "https://slametandfatma.wedding/galeri/story1.jpeg",
+      "title": "Episode 1: How We Met Each Other that Time",
+      "description": "Paya dan ijal ketemu di bumble"
+    },
+    {
+      "image_url": "https://slametandfatma.wedding/galeri/story2.jpg",
+      "title": "Episode 2: A Love That Grows With Time",
+      "description": "dan begitulah awal mula kami saling mengenal, dari bumble ke whatsapp, dari whatsapp ke telepon, dari telepon ke video call, dari video call ke ketemuan langsung, dan dari ketemuan langsung ke pernikahan."
+    }
+  ],
+  "gallery": [
+    "https://slametandfatma.wedding/galeri/1.jpg",
+    "https://slametandfatma.wedding/galeri/2.jpg",
+    "https://slametandfatma.wedding/galeri/3.jpg",
+    "https://slametandfatma.wedding/galeri/4.jpg",
+    "https://slametandfatma.wedding/galeri/5.jpg",
+    "https://slametandfatma.wedding/galeri/6.jpg",
+    "https://slametandfatma.wedding/galeri/7.jpg",
+    "https://slametandfatma.wedding/galeri/8.jpg",
+    "https://slametandfatma.wedding/galeri/9.jpg"
+  ],
+  "show_menu": {
+    "breaking_news": true,
+    "bride_and_groom": true,
+    "love_story": true,
+    "gallery": true,
+    "wish": true
+  }
+}
