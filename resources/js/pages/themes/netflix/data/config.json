@@ -61,5 +61,19 @@
     "love_story": true,
     "gallery": true,
     "wish": true
-  }
+  },
+  "gift_info" : [
+      {
+        "provider": "BCA",
+        "accountNumber": "1234567890",
+        "accountName": "Aulia & Bima",
+        "address": "Jl. Raya No. 123, Jakarta"
+      },
+      {
+        "provider": "DANA",
+        "accountNumber": "0856-xxxx-xxxx",
+        "accountName": "Aulia",
+        "address": "Jl. Raya No. 123, Bogor"
+      }
+    ]
 }

@@ -4,6 +4,7 @@ import SongButton from '../../ui/song-button';
 import BreakingNews from '../breaking-news';
 import Bridegroom from '../bride-groom';
 import Footer from '../footer';
+import Gift from '../gift';
 import Location from '../location';
 import LoveStory from '../love-story';
 import OurGallery from '../our-gallery';
@@ -28,6 +29,7 @@ export default function DetailInfo() {
                 <LoveStory />
                 <OurGallery />
                 <Location />
+                <Gift />
                 {data.show_menu.wish && import.meta.env.VITE_APP_TABLE_NAME ? <WishSection /> : null}
             </div>
             <Footer />

@@ -109,7 +109,7 @@ export default function WishSection() {
         <div>
             <h2 className="mb-5 text-lg leading-5 font-bold text-white">Best Wishes for the Couple ❤️</h2>
             {/* comments list */}
-            <div className="wish-container max-h-[25rem] space-y-4 overflow-auto border border-slate-800 bg-slate-900 p-3">
+            <div className="wish-container max-h-[25rem] space-y-4 overflow-auto border border-neutral-950 bg-neutral-900 p-3">
                 {data.map((item, index) => (
                     <WishItem
                         name={item.name}
@@ -145,7 +145,11 @@ export default function WishSection() {
                         rows={4}
                     ></textarea>
                 </div>
-                <button type="submit" disabled={loading} className="w-full rounded-sm bg-white py-2 text-sm font-semibold text-black">
+                <button
+                    type="submit"
+                    disabled={loading}
+                    className="mt-4 w-full rounded-sm bg-red-500 py-2 text-sm font-semibold text-white hover:bg-red-600 focus:outline-none disabled:cursor-not-allowed disabled:bg-red-300"
+                >
                     Kirim
                 </button>
             </form>
