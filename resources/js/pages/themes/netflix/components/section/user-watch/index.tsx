@@ -1,4 +1,3 @@
-import { BASE_URL } from '@/constants';
 import { useEffect, useState } from 'react';
 
 export default function UserWatch({ onClick }: { onClick: () => void }) {
@@ -17,7 +16,7 @@ export default function UserWatch({ onClick }: { onClick: () => void }) {
         <div className="space-y-36 py-14 text-center">
             <img
                 className="mx-auto scale-110 cursor-pointer transition-transform duration-400 hover:scale-150"
-                src={`${BASE_URL}/storage/images/NIKAHFIX.webp`}
+                src={`/storage/images/NIKAHFIX.webp`}
                 width={'125px'}
                 height={'48px'}
                 alt="Nikah Fix"
@@ -28,7 +27,7 @@ export default function UserWatch({ onClick }: { onClick: () => void }) {
                 <div onClick={onClick} className="group cursor-pointer">
                     <img
                         className="mx-auto transition-transform duration-400 group-hover:scale-125"
-                        src={`${BASE_URL}/storage/images/guest-icon.png`}
+                        src={`/storage/images/guest-icon.png`}
                         width={100}
                         height={100}
                         alt="Nikah Fix"

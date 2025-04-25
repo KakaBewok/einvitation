@@ -1,11 +1,19 @@
-import { BASE_URL } from '@/constants';
 import data from '@/pages/themes/netflix/data/config.json';
+import AOS from 'aos';
+import { useEffect } from 'react';
 
 export default function TitleInfo() {
+    useEffect(() => {
+        AOS.init({ duration: 1500, once: false });
+        setTimeout(() => {
+            AOS.refresh();
+        }, 100);
+    }, []);
+
     return (
         <div className="mb-14 space-y-2">
             <div className="flex items-center gap-1">
-                <img src={`${BASE_URL}/storage/images/favicon.ico`} alt="Netflix Logo (N)" width={18} height={18} loading="eager" />
+                <img src={`/storage/images/favicon.ico`} alt="Netflix Logo (N)" width={18} height={18} loading="eager" />
                 <span className="mt-0.5 text-xs tracking-widest text-[#A3A1A1]">DOCUMENTER</span>
             </div>
             <h2 className="text-lg leading-5 font-bold text-white">
@@ -17,10 +25,10 @@ export default function TitleInfo() {
                 <span className="mr-2 text-white">{data.tanggal_pernikahan.split('-')[0]}</span>
                 <span className="mr-2 text-white">1h 26m</span>
                 <span>
-                    <img src={`${BASE_URL}/storage/images/4k-icon.png`} width={16} height={16} alt="4k" loading="eager" />
+                    <img src={`/storage/images/4k-icon.png`} width={16} height={16} alt="4k" loading="eager" />
                 </span>
                 <span>
-                    <img src={`${BASE_URL}/storage/images/hd-icon.png`} width={16} height={16} alt="hd" loading="eager" />
+                    <img src={`/storage/images/hd-icon.png`} width={16} height={16} alt="hd" loading="eager" />
                 </span>
             </div>
             <div className="w-fit rounded bg-[#E50913] px-2 py-1 text-xs font-bold text-white">

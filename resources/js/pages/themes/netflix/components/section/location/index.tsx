@@ -24,8 +24,9 @@ const Location = () => {
                         referrerPolicy="no-referrer-when-downgrade"
                     ></iframe>
                 </div>
+                <p className="text-center text-xs text-slate-200">jl. Raya Puncak, Kec. Megamendung, Kab. Bogor Provinsi Jawab Barat Indonesia.</p>
                 <a
-                    className="text-center text-xs underline"
+                    className="text-center text-xs text-blue-500 underline"
                     href="https://maps.app.goo.gl/CMA4urZ4bbFhvDoA8"
                     target="_blank"
                     rel="noopener noreferrer"

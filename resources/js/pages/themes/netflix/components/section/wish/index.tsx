@@ -1,5 +1,5 @@
-import { BASE_URL } from '@/constants';
 import supabase from '@/pages/themes/netflix/data/supabaseClient';
+import AOS from 'aos';
 import badwords from 'indonesian-badwords';
 import { forwardRef, useEffect, useRef, useState } from 'react';
 
@@ -15,7 +15,7 @@ const WishItem = forwardRef<HTMLDivElement, WishItemProps>(({ name, message, col
             <img
                 width={24}
                 height={24}
-                src={`${BASE_URL}/storage/images/face.png`}
+                src={`/storage/images/face.png`}
                 style={{
                     backgroundColor: color,
                     minWidth: 24,
@@ -104,10 +104,15 @@ export default function WishSection() {
 
     useEffect(() => {
         fetchData();
+
+        AOS.init({ duration: 1500, once: false });
+        setTimeout(() => {
+            AOS.refresh();
+        }, 100);
     }, []);
 
     return (
-        <div>
+        <div aos-data="fade-left">
             <h2 className="mb-5 text-lg leading-5 font-bold text-white">Best Wishes for the Couple ❤️</h2>
             {/* comments list */}
             <div className="wish-container max-h-[25rem] space-y-4 overflow-auto rounded-sm border border-neutral-950 bg-neutral-900 p-3">
