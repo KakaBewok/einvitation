@@ -1,42 +1,17 @@
 import data from '@/pages/themes/netflix/data/config.json';
-import React from 'react';
-
-interface LoveItemProps {
-    imageUrl: string;
-    title: string;
-    duration: string;
-    description: string;
-}
-
-const LoveItem: React.FC<LoveItemProps> = ({ imageUrl, title, duration, description }) => {
-    return (
-        <>
-            <div className="grid grid-cols-2 gap-3">
-                <div>
-                    <img
-                        className="w-full rounded-sm object-cover"
-                        height={100}
-                        style={{
-                            maxHeight: '100px',
-                        }}
-                        src={imageUrl}
-                        alt="Love Story Image"
-                        loading="lazy"
-                    />
-                </div>
-                <div className="flex justify-center">
-                    <div className="flex flex-col items-start justify-start">
-                        <p className="mb-2 tracking-tighter text-white">{title}</p>
-                        <p className="text-xs text-[#A3A1A1]">{duration}</p>
-                    </div>
-                </div>
-            </div>
-            <p className="text-xs text-[#A3A1A1]">{description}</p>
-        </>
-    );
-};
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+import LoveItem from './lova-item';
 
 export default function LoveStory() {
+    useEffect(() => {
+        AOS.init({ duration: 1500, once: false });
+        setTimeout(() => {
+            AOS.refresh();
+        }, 100);
+    }, []);
+
     return (
         <div className="mb-14">
             <h2 className="mb-4 text-lg leading-5 font-bold text-white">Our Love Story</h2>

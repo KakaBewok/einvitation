@@ -21,6 +21,7 @@ export default function UserWatch({ onClick }: { onClick: () => void }) {
                 width={'125px'}
                 height={'48px'}
                 alt="Nikah Fix"
+                loading="eager"
             />
             <div>
                 <p className="mb-10 text-2xl font-bold">Who's Watching?</p>
@@ -31,6 +32,7 @@ export default function UserWatch({ onClick }: { onClick: () => void }) {
                         width={100}
                         height={100}
                         alt="Nikah Fix"
+                        loading="eager"
                     />
                     <p className="mt-2 text-xl transition-transform duration-400 group-hover:translate-y-10 group-hover:scale-125">{to}</p>
                 </div>

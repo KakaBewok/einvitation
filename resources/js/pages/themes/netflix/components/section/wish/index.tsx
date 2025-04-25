@@ -22,6 +22,7 @@ const WishItem = forwardRef<HTMLDivElement, WishItemProps>(({ name, message, col
                     minHeight: 24,
                 }}
                 className="rounded-sm"
+                loading="eager"
             />
         </div>
         <div>
@@ -109,7 +110,7 @@ export default function WishSection() {
         <div>
             <h2 className="mb-5 text-lg leading-5 font-bold text-white">Best Wishes for the Couple ❤️</h2>
             {/* comments list */}
-            <div className="wish-container max-h-[25rem] space-y-4 overflow-auto border border-neutral-950 bg-neutral-900 p-3">
+            <div className="wish-container max-h-[25rem] space-y-4 overflow-auto rounded-sm border border-neutral-950 bg-neutral-900 p-3">
                 {data.map((item, index) => (
                     <WishItem
                         name={item.name}
