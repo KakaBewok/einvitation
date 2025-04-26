@@ -106,7 +106,7 @@ export default function WishSection() {
     }, []);
 
     return (
-        <div aos-data="fade-left">
+        <div aos-data="zoom-in">
             <h2 className="mb-5 text-lg leading-5 font-bold text-white">Best Wishes for the Couple ❤️</h2>
             {/* comments list */}
             <div className="wish-container max-h-[25rem] space-y-4 overflow-auto rounded-sm border border-neutral-950 bg-neutral-900 p-3">
