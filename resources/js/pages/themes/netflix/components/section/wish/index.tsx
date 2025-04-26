@@ -1,5 +1,4 @@
 import supabase from '@/pages/themes/netflix/data/supabaseClient';
-import AOS from 'aos';
 import badwords from 'indonesian-badwords';
 import { forwardRef, useEffect, useRef, useState } from 'react';
 
@@ -104,11 +103,6 @@ export default function WishSection() {
 
     useEffect(() => {
         fetchData();
-
-        AOS.init({ duration: 1500, once: false });
-        setTimeout(() => {
-            AOS.refresh();
-        }, 100);
     }, []);
 
     return (

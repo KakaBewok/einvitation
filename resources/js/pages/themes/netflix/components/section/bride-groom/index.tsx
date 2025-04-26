@@ -1,17 +1,8 @@
 import data from '@/pages/themes/netflix/data/config.json';
-import AOS from 'aos';
-import { useEffect } from 'react';
 
 export default function Bridegroom() {
-    useEffect(() => {
-        AOS.init({ duration: 1500, once: false });
-        setTimeout(() => {
-            AOS.refresh();
-        }, 100);
-    }, []);
-
     return (
-        <div className="mb-14" data-aos="fade-left">
+        <div className="mb-14" data-aos="zoom-in">
             <h2 className="mb-4 text-lg leading-5 font-bold text-white">Bride and Groom</h2>
             <div className="grid grid-cols-2 gap-4">
                 <div>

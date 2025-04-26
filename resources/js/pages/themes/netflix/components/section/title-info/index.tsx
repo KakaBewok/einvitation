@@ -1,17 +1,8 @@
 import data from '@/pages/themes/netflix/data/config.json';
-import AOS from 'aos';
-import { useEffect } from 'react';
 
 export default function TitleInfo() {
-    useEffect(() => {
-        AOS.init({ duration: 1500, once: false });
-        setTimeout(() => {
-            AOS.refresh();
-        }, 100);
-    }, []);
-
     return (
-        <div className="mb-14 space-y-2">
+        <div className="mb-14 space-y-2" data-aos="fade-right">
             <div className="flex items-center gap-1">
                 <img src={`/storage/images/favicon.ico`} alt="Netflix Logo (N)" width={18} height={18} loading="eager" />
                 <span className="mt-0.5 text-xs tracking-widest text-[#A3A1A1]">DOCUMENTER</span>

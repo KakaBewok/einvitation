@@ -1,6 +1,6 @@
 export const GalleryItem = ({ src }: { src: string }) => (
     <img
-        data-aos="fade-up"
+        data-aos="zoom-in"
         src={src}
         alt="Gallery Image"
         loading="lazy"

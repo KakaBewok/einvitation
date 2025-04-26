@@ -1,18 +1,10 @@
 import data from '@/pages/themes/netflix/data/config.json';
-import AOS from 'aos';
 import { Copy, CopyCheck } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const Gift = () => {
     const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
     const [addressCopied, setAddressCopied] = useState<boolean>(false);
-
-    useEffect(() => {
-        AOS.init({ duration: 1500, once: false });
-        setTimeout(() => {
-            AOS.refresh();
-        }, 100);
-    }, []);
 
     const handleCopy = (text: string, index?: number) => {
         navigator.clipboard.writeText(text);
@@ -26,7 +18,7 @@ const Gift = () => {
     };
 
     return (
-        <section className="space-y-10 bg-black px-6 py-10 text-white" data-aos="fade-right">
+        <section className="space-y-10 bg-black px-6 py-10 text-white" data-aos="fade-left">
             <div className="text-center">
                 <h2 className="mb-2 text-lg leading-5 font-bold text-white">Wedding Gift</h2>
                 <p className="mx-auto max-w-xl text-xs text-slate-300">

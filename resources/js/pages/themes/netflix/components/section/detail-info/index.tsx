@@ -1,3 +1,4 @@
+import AOS from 'aos';
 import { useEffect } from 'react';
 import data from '../../../data/config.json';
 import SongButton from '../../ui/song-button';
@@ -14,6 +15,11 @@ import WishSection from '../wish';
 export default function DetailInfo() {
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' }); // or 'auto'
+
+        AOS.init({ duration: 1500, once: false, offset: 400 });
+        setTimeout(() => {
+            AOS.refresh();
+        }, 100);
     }, []);
 
     return (

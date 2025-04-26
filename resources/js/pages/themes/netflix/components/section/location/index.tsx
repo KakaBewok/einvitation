@@ -1,13 +1,4 @@
-import AOS from 'aos';
-import { useEffect } from 'react';
 const Location = () => {
-    useEffect(() => {
-        AOS.init({ duration: 1500, once: false });
-        setTimeout(() => {
-            AOS.refresh();
-        }, 100);
-    }, []);
-
     return (
         <>
             <div className="pb-4 text-center" data-aos="fade-right">
