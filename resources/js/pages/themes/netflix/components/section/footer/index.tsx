@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <div data-aos="fade-up">
+        <>
             <div className="mt-8 flex flex-col items-center">
                 <p className="text-sm text-white">Thank you for checking up all the things up there!</p>
                 <p className="text-sm text-white">Can’t wait to see u again! 💕</p>
@@ -13,6 +13,6 @@ export default function Footer() {
                     </a>
                 </p>
             </div>
-        </div>
+        </>
     );
 }

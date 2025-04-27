@@ -16,7 +16,7 @@ export default function DetailInfo() {
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' }); // or 'auto'
 
-        AOS.init({ duration: 1500, once: false, offset: 400 });
+        AOS.init({ duration: 1500, once: true, offset: 400 });
         setTimeout(() => {
             AOS.refresh();
         }, 100);
